@@ -38,7 +38,10 @@ public class StudentRecyclerList extends AppCompatActivity {
         adapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(int pos) {
-                    Log.d("TAG", "Row was clicked " + pos);
+                Log.d("TAG", "Row was clicked " + pos);
+                Intent intent = new Intent(StudentRecyclerList.this, EditStudent.class);
+                intent.putExtra("index", pos);
+                startActivity(intent);
                 }
             });
 
@@ -73,7 +76,7 @@ public class StudentRecyclerList extends AppCompatActivity {
                 public void onClick(View view) {
                     int pos = (int)cb.getTag();
                     Student st = data.get(pos);
-                    st.cb = cb.isChecked();
+                    st.setCb(cb.isChecked());
                 }
             });
             itemView.setOnClickListener(new View.OnClickListener() {
@@ -86,9 +89,9 @@ public class StudentRecyclerList extends AppCompatActivity {
         }
 
         public void bind(Student st, int pos) {
-            nameTv.setText(st.name);
-            idTv.setText(st.id);
-            cb.setChecked(st.cb);
+            nameTv.setText(st.getName());
+            idTv.setText(st.getId());
+            cb.setChecked(st.getCb());
             cb.setTag(pos);
         }
     }

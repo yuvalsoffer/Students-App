@@ -20,6 +20,13 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".EditStudent"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".StudentRecyclerList"
             android:exported="true">
             <meta-data

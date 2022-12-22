@@ -22,6 +22,20 @@ public class Model {
         return data;
     }
 
+    public Student getStudentAtIndex(int index) {
+        Student s = data.get(index);
+
+        return s;
+    }
+
+    public void setStudentAtIndex(Student s, int index) {
+        data.set(index, s);
+    }
+
+    public void deleteStudentAtIndex(int index) {
+        data.remove(index);
+    }
+
     public void addStudent(Student st) {
         data.add(st);
     }
